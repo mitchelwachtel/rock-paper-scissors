@@ -1,41 +1,83 @@
-var game = function(userChoice) {
+var game = function () {
     
-    var compChoice = Math.floor(Math.random()*3);
-    
+   
+  
+    var userWins = 0;
+    var compWins = 0;
+    var ties = 0;
+
+    // onePlay is one round output is tie, comp, or user
+  var onePlay = function () {
+    var userChoice = prompt("Input R, P, or S", " ");
+    var compChoice = Math.floor(Math.random() * 3);
+
     if (compChoice === 0) {
-        compChoice = 'R';
+      compChoice = "R";
     } else if (compChoice === 1) {
-        compChoice = 'P';
+      compChoice = "P";
     } else if (compChoice === 2) {
-        compChoice = 'S';
+      compChoice = "S";
     }
     // Last 'else if' could be changed to simply 'else'
-    
-    var result = '';
+
+    var result = "";
 
     if (compChoice == userChoice) {
-       result = 'Tie!';
-    } else if (compChoice == 'R') {
-        if (userChoice == 'S') {
-            result = 'Computer Wins!'
-        } else if (userChoice == 'P') {
-            result = 'User Wins!'
-        }
-    } else if (compChoice == 'P') {
-        if (userChoice == 'R') {
-            result = 'Computer Wins!'
-        } else if (userChoice == 'S') {
-            result = 'User Wins!'
-        }
-    } else if (compChoice == 'S') {
-        if (userChoice == 'P') {
-            result = 'Computer Wins!'
-        } else if (userChoice == 'R') {
-            result = 'User Wins!'
-        }
-    } 
+      result = "tie";
+      alert('Tie!');
+    } else if (compChoice == "R") {
+      if (userChoice == "S") {
+        result = "comp";
+        alert('Computer Wins!');
+      } else if (userChoice == "P") {
+        result = "user";
+        alert('User Wins!');
+      }
+    } else if (compChoice == "P") {
+      if (userChoice == "R") {
+        result = "comp";
+        alert('Computer Wins!');
+      } else if (userChoice == "S") {
+        result = "user";
+        alert('User Wins!');
+      }
+    } else if (compChoice == "S") {
+      if (userChoice == "P") {
+        result = "comp";
+        alert('Computer Wins!');
+      } else if (userChoice == "R") {
+        result = "user";
+        alert('User Wins!');
+      }
+    }
 
-    return result;
+    count(result);
+    
+    if (confirm('User: ' + userWins + '\n Computer: ' + compWins + '\n Ties: ' + ties + '\n Play Again?') == true) {
+        onePlay();
+      } 
+
+  };
+  
+  var count = function(result) {
+      if (result == 'comp') {
+          return compWins++;
+      } else if (result == 'user') {
+          return userWins++;
+      } else if (result == 'tie') {
+          return ties++;
+      }
+  }
+  
+  onePlay();
 };
 
-console.log(game('S'));
+// console.log(game('S'));
+
+// function myFunction() {
+//     let person = prompt("Please enter your name", "Harry Potter");
+//     if (person != null) {
+//       document.getElementById("demo").innerHTML =
+//       "Hello " + person + "! How are you today?";
+//     }
+//   }

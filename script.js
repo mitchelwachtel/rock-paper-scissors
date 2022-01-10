@@ -21,6 +21,10 @@ var game = function () {
     // Last 'else if' could be changed to simply 'else'
 
     var result = "";
+    
+    if (userChoice != 'R' && userChoice != 'P' && userChoice != 'S') {
+        alert('You must input R, P, or S');
+    }
 
     if (compChoice == userChoice) {
       result = "tie";
@@ -72,12 +76,3 @@ var game = function () {
   onePlay();
 };
 
-// console.log(game('S'));
-
-// function myFunction() {
-//     let person = prompt("Please enter your name", "Harry Potter");
-//     if (person != null) {
-//       document.getElementById("demo").innerHTML =
-//       "Hello " + person + "! How are you today?";
-//     }
-//   }

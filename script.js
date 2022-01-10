@@ -57,7 +57,7 @@ var game = function () {
 
     count(result);
     
-    if (confirm('User: ' + userWins + '\n Computer: ' + compWins + '\n Ties: ' + ties + '\n Play Again?') == true) {
+    if (confirm('User: ' + userWins + '\nComputer: ' + compWins + '\nTies: ' + ties + '\n \nPlay Again?') == true) {
         onePlay();
       } 
 

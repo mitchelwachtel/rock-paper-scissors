@@ -8,7 +8,7 @@ var game = function () {
 
     // onePlay is one round output is tie, comp, or user
   var onePlay = function () {
-    var userChoice = prompt("Input R, P, or S", " ");
+    var userChoice = prompt("Input R, P, or S", "");
     var compChoice = Math.floor(Math.random() * 3);
 
     if (compChoice === 0) {

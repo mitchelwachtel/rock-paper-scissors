@@ -4,10 +4,11 @@
 }
 body {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: linear-gradient(45deg, #F8F7FC, #A7AAB3);
+    background: linear-gradient(70deg, #F8F7FC, #898C98);
 }
 h1 {
     font-size: 50px;

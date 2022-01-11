@@ -25,6 +25,8 @@ var game = function () {
     if (userChoice != 'R' && userChoice != 'P' && userChoice != 'S') {
         alert('You must input R, P, or S');
     }
+    
+    alert('Computer chooses: ' + compChoice);
 
     if (compChoice == userChoice) {
       result = "tie";

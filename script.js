@@ -22,12 +22,15 @@ var game = function () {
 
     var result = "";
     
+    // forcing user to choose capital R, P, or S
     if (userChoice != 'R' && userChoice != 'P' && userChoice != 'S') {
         alert('You must input R, P, or S');
     }
     
+    // Seeing what the computer chooses so there is nothing to hide.
     alert('Computer chooses: ' + compChoice);
 
+    // Started with the tie, then looked at each specific case.
     if (compChoice == userChoice) {
       result = "tie";
       alert('Tie!');
@@ -56,7 +59,8 @@ var game = function () {
         alert('User Wins!');
       }
     }
-
+    
+    // Sends result to be tallied.
     count(result);
     
     if (confirm('User: ' + userWins + '\nComputer: ' + compWins + '\nTies: ' + ties + '\n \nPlay Again?') == true) {
@@ -65,6 +69,7 @@ var game = function () {
 
   };
   
+//   Function that tallies up the results and logs them to variables accessible throughout game()
   var count = function(result) {
       if (result == 'comp') {
           return compWins++;
@@ -75,6 +80,7 @@ var game = function () {
       }
   }
   
+//   This is really what starts the game loop. This calls the variable function at top.
   onePlay();
 };
 

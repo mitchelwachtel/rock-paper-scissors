@@ -25,6 +25,7 @@ var game = function () {
     // forcing user to choose capital R, P, or S
     if (userChoice != 'R' && userChoice != 'P' && userChoice != 'S') {
         alert('You must input R, P, or S');
+        onePlay();
     }
     
     // Seeing what the computer chooses so there is nothing to hide.
